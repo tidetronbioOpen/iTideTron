@@ -1,0 +1,4 @@
+server: Server2
+raw_data: data/probiotics/raw/probiotic_predict_10.csv
+result_data: scripts/search_from_model2_10.csv
+wrong_data: scripts/wrong_data.csv

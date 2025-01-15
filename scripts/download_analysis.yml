@@ -1,0 +1,3 @@
+raw_data_dir: "data/probiotics/raw/Probiotic651.csv"
+wrong_gene_save_path: 'data/scripts/wrong_gene.json'
+no_infor_gene_save_path: 'data/scripts/no_infor_gene.json'

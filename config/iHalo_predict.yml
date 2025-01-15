@@ -1,0 +1,32 @@
+itidetron:
+  profiles:
+    active: probiotic_predict # 指定使用哪个文档块
+type: probiotic
+status: predict 
+k_mer_set: [2, 3, 4, 5, 6, 7, 8]
+save_path : data/iHalo/pipeline/
+result_path:  data/iHalo/result/
+#益生菌预测模块参数
+itidetron:
+  profiles: probiotic_predict # profiles属性代表配置的名称
+predict_config:
+  do_norm_combiner: False 
+  # dataset 
+  column_fill_zero_with: eps
+  init_feat: True 
+  do_splitting: True 
+  ncores : 1
+  raw_path:  data/iHalo/raw/selected_genome_salinity.csv  # 前值条件 
+  save_dir_feat:  data/iHalo/raw/feature.csv # init_feat开启时生成 
+  # classifier
+  # ncores : 1
+  save_dir_feature_predict :  _mer_predict_file.csv # 已随splitter.predict废弃
+  output_dir_fselect :  _mer_train_select.csv # 已随splitter.predict废弃 
+  fine_feat_predict :  data/iHalo/pipeline/fine_feat_predict_651.csv # 已随splitter.predict废弃 
+  save_core_select :  data/iHalo/result/core_select.csv # @训练过程结果, 与model中scaler尺寸匹配
+  core_feat :  data/iHalo/result/core_select_2.csv # @预测过程结果
+  predict_labels :  data/iHalo/result/predict_labels.csv # 预测过程结果  
+  ground_truth:  data/iHalo/raw/my_labels_gold.csv # 前置条件 
+  model_dir: data/iHalo/result/iHalo_model.pickle # 训练过程结果, 与core_feat尺寸匹配
+  normalize: True #进行归一化
+  sample_genes: False #使用样例基因
